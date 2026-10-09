@@ -1,0 +1,1 @@
+odoo-addon-integration-queue-job @ git+https://github.com/Impress-Foods/integration-queue.git@19.0#subdirectory=integration_queue_job
