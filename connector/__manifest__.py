@@ -8,7 +8,7 @@
     "website": "https://github.com/OCA/connector",
     "license": "LGPL-3",
     "category": "Generic Modules",
-    "depends": ["mail", "queue_job", "component", "component_event"],
+    "depends": ["mail", "integration_queue_job", "component", "component_event"],
     "data": [
         "security/connector_security.xml",
         "views/connector_menu.xml",

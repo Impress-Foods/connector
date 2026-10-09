@@ -1,7 +1,7 @@
 # Copyright 2012 Camptocamp SA
 # License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl.html)
 
-from odoo.addons.queue_job.exception import JobError, RetryableJobError
+from odoo.addons.integration_queue_job.exception import JobError, RetryableJobError
 
 # Connector related errors
 

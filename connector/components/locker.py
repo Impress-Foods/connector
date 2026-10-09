@@ -34,7 +34,7 @@ class RecordLocker(Component):
         When concurrent jobs try to work on the same record(s), the first one
         will lock and proceed, the others will fail to acquire it and will be
         retried later
-        (:exc:`~odoo.addons.queue_job.exception.RetryableJobError` is raised).
+        (:exc:`~odoo.addons.integration_queue_job.exception.RetryableJobError` is raised).
 
         The lock is using a ``FOR UPDATE NOWAIT`` so any concurrent transaction
         trying FOR UPDATE/UPDATE will be rejected until the current transaction
@@ -43,14 +43,14 @@ class RecordLocker(Component):
         A classical use case for this is to prevent concurrent exports.
 
         The following parameters are forwarded to the exception
-        :exc:`~odoo.addons.queue_job.exception.RetryableJobError`
+        :exc:`~odoo.addons.integration_queue_job.exception.RetryableJobError`
 
         :param seconds: In case of retry because the lock cannot be acquired,
                         in how many seconds it must be retried. If not set,
-                        the queue_job configuration is used.
+                        the integration_queue_job configuration is used.
         :param ignore_retry: If True, the retry counter of the job will not be
                              increased.
-        """
+        """  # noqa: E501
         sql = f"SELECT id FROM {self.model._table} WHERE ID IN %s FOR UPDATE NOWAIT"
         try:
             self.env.cr.execute(sql, (tuple(records.ids),), log_exceptions=False)

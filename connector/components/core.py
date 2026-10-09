@@ -69,7 +69,7 @@ single-purpose, decoupled component.
 """
 
 from odoo.addons.component.core import AbstractComponent
-from odoo.addons.queue_job.exception import RetryableJobError
+from odoo.addons.integration_queue_job.exception import RetryableJobError
 
 from ..database import pg_try_advisory_lock
 
@@ -102,7 +102,7 @@ class BaseConnectorComponent(AbstractComponent):
         """Acquire a Postgres transactional advisory lock or retry job
 
         When the lock cannot be acquired, it raises a
-        :exc:`odoo.addons.queue_job.exception.RetryableJobError` so the job
+        :exc:`odoo.addons.integration_queue_job.exception.RetryableJobError` so the job
         is retried after n ``retry_seconds``.
 
         Usage example:

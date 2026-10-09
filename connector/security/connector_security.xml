@@ -18,7 +18,7 @@
             eval="[Command.link(ref('base.user_root')), Command.link(ref('base.user_admin'))]"
         />
     </record>
-    <record id="queue_job.group_queue_job_manager" model="res.groups">
+    <record id="integration_queue_job.group_queue_job_manager" model="res.groups">
         <field
             name="implied_ids"
             eval="[Command.link(ref('group_connector_manager'))]"
